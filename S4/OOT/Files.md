@@ -17,17 +17,36 @@ As Bjarne Stroustrup says in his book "The C++ Programming Language",
 >
 > It acts as a source from which input data can be obtained or as a destination output data can be sent.
 >
-> The source stream that provides data to the program is called input stream.
+> The source stream that provides data to the program is called input stream.(the direction of flow of bytes is from device to the main memory then this process is called input)
 >
-> Destination stream that receives output from the program is called the output stream.
+> Destination stream that receives output from the program is called the output stream.(viceversa)
 >
 >A program extracts the bytes from an input stream and inserts bytes into an output stream. 
 
 ```
 I/P Device -> I/P Stream -> Program -> O/P Stream -> O/P Device
 ```
+>
+> C++ program handles data independent of device
+>
+> cin represents the input stream connected to the standard input device
+>
+>cout represents the output stream connected to the standard output device
+>
 
+<h3>C++ IO Headers</h3>
 
+* iostream: iostream stands for standard input output stream. This header file contains definitions to objects like cin, cout, cerr etc.
+* iomanip: iomanip stands for input output manipulators. The methods declared in this files are used for manipulating streams. This file contains definitions of setw, setprecision etc.
+* fstream: This header file mainly describes the file stream. This header file is used to handle the data being read from a file as input or data being written into the file as output.
+
+<h3>C++ Stream Classes Structure</h3>
+
+In C++ there are number of stream classes for defining various streams related with files and for doing input-output operations. All these classes are defined in the file iostream.h. 
+* ios class is topmost class in the stream classes hierarchy. It is the base class for istream, ostream, and streambuf class.
+* istream and ostream serves the base classes for iostream class. The class istream is used for input and ostream for the output.
+* Class ios is indirectly inherited to iostream class using istream and ostream. To avoid the duplicity of data and member functions of ios class, it is declared as virtual base class when inheriting in istream and ostream
+* The \_withassign classes are provided with extra functionality for the assignment operations that’s why \_withassign classes.
 
 
 
@@ -51,4 +70,5 @@ I/P Device -> I/P Stream -> Program -> O/P Stream -> O/P Device
 <h2>Bibliography</h2>
 * https://www.geeksforgeeks.org/basic-input-output-c/
 * https://www.cprogramming.com/tutorial/c++-iostreams.html
+* https://www.geeksforgeeks.org/c-stream-classes-structure/
 * 
