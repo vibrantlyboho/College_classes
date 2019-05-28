@@ -53,6 +53,11 @@ To create a class template object, you need to define the data type inside a < >
 
 For example: className \<int\> classObject;
 
+<h2>Templates vs Function Overloading</h2>
+When functions are overloaded, you can have different actions performed within the body of each function
+But generic functions must perform the same general action for all versions
+If you overload a generic function, the overloaded function overrides(hides) the generic function relative to that specific version
+
 <h2>Bibliography</h2>
 <ul><li>https://www.programiz.com/cpp-programming/templates</li>
 <li>https://www.geeksforgeeks.org/templates-cpp/</li></ul>
