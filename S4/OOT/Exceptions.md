@@ -39,15 +39,26 @@ C++ provides following specialized keywords for this purpose.
 <li>catch: represents a block of code that is executed when a particular exception is thrown.</li>
 <li>throw: Used to throw an exception. Also used to list the exceptions that a function throws, but doesn’t handle itself.</li></ul>
 
+```
+try
+{
+    throw exception;
+}
 
+catch(type arg)
+{
+    //some code
+}
+```
+If the try block throws an exception then program control leaves the block and enters into the catch statement of the catch block. 
+If the type of object thrown matches the argument type in the catch statement, the catch block is executed for handling the exception. 
+Divided-by-zero is a common form of exception generally occurred in arithmetic based programs.
 
-
-
+#### There is a special catch block called ‘catch all’ catch(…) that can be used to catch all types of exceptions. 
 
 
 
 <h2>Bibliography</h2>
 <ul><li>https://www.geeksforgeeks.org/exception-handling-c/</li>
 <li>https://www.w3schools.in/cplusplus-tutorial/exception-handling/</li>
-<li></li>
 </ul>
