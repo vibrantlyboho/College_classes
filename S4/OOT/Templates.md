@@ -32,6 +32,7 @@ You can also use keyword typename instead of class in the above example.
 Like function templates, you can also create class templates for generic class operations.
 Sometimes, you need a class implementation that is same for all classes, only the data types used are different.
 Normally, you would need to create a different class for each data type OR create different member variables and functions within a single class.
+The process of creating a specific class from a class template is called instantiation.
 This will unnecessarily bloat your code base and will be hard to maintain, as a change is one class/function should be performed on all classes/functions.
 However, class templates make it easy to reuse the same code for all data types.
 
