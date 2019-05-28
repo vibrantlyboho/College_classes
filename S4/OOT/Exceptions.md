@@ -118,7 +118,7 @@ End of main
 >
 > After executing handler the control goes to the statement immediately following the catch block.Catch block is skipped if the catch statement does not catch an exception
 >
-> Restrict function to throw only certain specified exceptions. Add throw list clause to the function definition.Type-list specifies the type of exceptions that may be thrown. Throwing any other type of exception will cause abnormal program termination.  To prevent a function from throwing any exception, make throw list empty 
+> It is possible to restrict functions to throw only certain specified exceptions. For this you add throw list clause to the function definition.Type-list specifies the type of exceptions that may be thrown. Throwing any other type of exception will cause abnormal program termination.  To prevent a function from throwing any exception, make throw list empty 
 
 ```
 return_type  function(arg-list)  throw (type-list)
