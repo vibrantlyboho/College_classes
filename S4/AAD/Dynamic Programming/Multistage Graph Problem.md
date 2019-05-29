@@ -57,6 +57,7 @@ then the time for the first for loop is theta( |V| + |E| ).
 <h2>Backward Approach(Front to End)</h2>
 
 From the backward approach we obtain:
+
 Bcost (i, j) = min { Bcost (i –1, l) + c (l, j)}
                l belongs to Vi - 1
 <l, j> belongs to E
