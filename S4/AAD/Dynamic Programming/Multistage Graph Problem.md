@@ -98,4 +98,4 @@ for j:= k - 1 to 2 do p [j] := d [p [j + 1]];
 * https://www.geeksforgeeks.org/multistage-graph-shortest-path/
 * https://www.includehelp.com/algorithms/multistage-graph-problem-with-forward-approach-and-backward-approach.aspx
 * https://mrcet.com/downloads/digital_notes/IT/Design%20and%20Analysis%20Algorithms.pdf
-* Fundamentals of Compuer Algorithms by Hororwittz and Sahni
+* Fundamentals of Compuer Algorithms by Horowitz and Sahni
