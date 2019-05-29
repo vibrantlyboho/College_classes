@@ -22,7 +22,7 @@ noticing that every s to t path is the result of a sequence of k – 2 decisions
 decision involves determining which vertex in vi+1, 1 < i < k - 2, is to be on the path. Let c
 (i, j) be the cost of the path from source to destination. 
 
-<h2>Forward Approach</h2>
+<h2>Forward Approach(End to Front)</h2>
 
 Then using the forward approach, we
 obtain:
@@ -53,7 +53,7 @@ Complexity Analysis
 The complexity analysis of the algorithm is fairly straightforward. Here, if G has |E| edges,
 then the time for the first for loop is theta( |V| + |E| ).
 
-<h2>Backward Approach</h2>
+<h2>Backward Approach(Front to End)</h2>
 
 From the backward approach we obtain:
 Bcost (i, j) = min { Bcost (i –1, l) + c (l, j)}
