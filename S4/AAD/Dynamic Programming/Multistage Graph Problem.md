@@ -49,7 +49,8 @@ p [1] := 1; p [k] := n; // Find a minimum cost path.
 for j := 2 to k - 1 do p [j] := d [p [j - 1]];}
 
 ```
-Complexity Analysis
+#### Complexity Analysis
+
 The complexity analysis of the algorithm is fairly straightforward. Here, if G has |E| edges,
 then the time for the first for loop is theta( |V| + |E| ).
 
