@@ -25,10 +25,35 @@ Then, determine what the solution will include (for example, the largest sum, th
 Create some sort of iterative way to go through all of the subproblems and build a solution.
 ```
 
+<h2>Components of Greedy Algorithm</h2>
+Greedy algorithms have the following five components −
 
+* A candidate set − A solution is created from this set.
+* A selection function − Used to choose the best candidate to be added to the solution.
+* A feasibility function − Used to determine whether a candidate can be used to contribute to the solution.
+* An objective function − Used to assign a value to a solution or a partial solution.
+* A solution function − Used to indicate whether a complete solution has been reached.
+
+________
+
+<h2>Control Abstraction for Greedy algorithm</h2>
+
+```
+Algorithm Greedy(A : set; n : integer){
+MakeEmpty(solution);
+f or(i = 2;i <= n;i + +){
+x = Select(A);
+if Feasible(solution, x) then
+solution = Union(solution, {x})
+}
+return solution
+}
+```
 
 
 <h2>Bibliography</h2>
 
 * https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/tutorial/
 * https://www.geeksforgeeks.org/greedy-algorithms/
+* https://www.tutorialspoint.com/design_and_analysis_of_algorithms/design_and_analysis_of_algorithms_greedy_method.htm
+* http://www.personal.reading.ac.uk/~sis01xh/teaching/CS2EA16/Le6a.pdf
