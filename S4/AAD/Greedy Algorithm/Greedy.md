@@ -21,7 +21,7 @@ there is a choice that is optimal for the problem up to that step, and after the
 
 ```
 To make a greedy algorithm, identify an optimal substructure or subproblem in the problem. 
-Then, determine what the solution will include (for example, the largest sum, the shortest path, etc.). 
+Then, determine what the solution will include (for example, the largest sum, the shortest path, etc)
 Create some sort of iterative way to go through all of the subproblems and build a solution.
 ```
 
