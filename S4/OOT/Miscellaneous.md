@@ -7,4 +7,5 @@
 * Classes, Structures, Union, Enumeration
 * Anonymous Union
 * Messages
+* string class
 * 
