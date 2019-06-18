@@ -7,5 +7,12 @@
 * Classes, Structures, Union, Enumeration
 * Anonymous Union
 * Messages
-* string class
-* 
+
+* string class: <link>https://www.geeksforgeeks.org/stdstring-class-in-c/<link>
+
+* new and delete: <link>https://www.geeksforgeeks.org/new-and-delete-operators-in-cpp-for-dynamic-memory/</link>
+
+* lvalue and rvalue: <link>https://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c</link>, 
+<link>https://www.geeksforgeeks.org/lvalue-and-rvalue-in-c-language/</link>
+
+* POinters to Functions: <link>https://www.learncpp.com/cpp-tutorial/78-function-pointers/</link>
