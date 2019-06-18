@@ -12,7 +12,12 @@
 
 * new and delete: <link>https://www.geeksforgeeks.org/new-and-delete-operators-in-cpp-for-dynamic-memory/</link>
 
-* lvalue and rvalue: <link>https://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c</link>, 
-<link>https://www.geeksforgeeks.org/lvalue-and-rvalue-in-c-language/</link>
+* lvalue and rvalue: <link>https://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c</link>,         <link>https://www.geeksforgeeks.org/lvalue-and-rvalue-in-c-language/</link>
 
-* POinters to Functions: <link>https://www.learncpp.com/cpp-tutorial/78-function-pointers/</link>
+* Pointers to Functions: <link>https://www.learncpp.com/cpp-tutorial/78-function-pointers/</link>
+
+* Dangling Reference: Check StackOverflow & Quora
+
+* new vs malloc: <link>https://www.geeksforgeeks.org/malloc-vs-new/</link>
+
+* Polymorphism: <link>https://www.studytonight.com/cpp/function-overriding.php</link>, <link>https://www.geeksforgeeks.org/polymorphism-in-c/</link>
