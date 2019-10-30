@@ -29,7 +29,7 @@ select * from movie;
 |      2 | Ambili         |     2019 | 2019-07-02  |          140 | Malayalam | India           |
 |      3 | Up             |     2010 | 2010-10-03  |          125 | English   | USA             |
 |      4 | It             |     2015 | 2015-01-05  |          135 | English   | UK              |
-|      5 | Yugam          |     2017 | 2017-11-15  |          135 | Malayalam | UK              |
+|      5 | Mugam          |     2017 | 2017-11-15  |          135 | Malayalam | UK              |
 |      6 | Ek Villain     |     2016 | 2016-12-01  |          105 | Hindi     | India           |
 |      7 | Lagaan         |     2018 | 2018-05-12  |          130 | Hindi     | UK              |
 +--------+----------------+----------+-------------+--------------+-----------+-----------------+
@@ -237,7 +237,7 @@ where act_id in (select act_id from movie_cast natural join movie where mov_titl
 +-----------+
 | Up        |
 | It        |
-| Yugam     |
+| Mugam     |
 | Lagaan    |
 +-----------+
 ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -302,8 +302,8 @@ select re.rev_name, m.mov_title from rating r join movie m on r.mov_id=m.mov_id 
 | Karthika | Ambili         |
 | Shasniya | It             |
 | Joann    | It             |
-| Karthika | Yugam          |
-| Shasniya | Yugam          |
+| Karthika | Mugam          |
+| Shasniya | Mugam          |
 +----------+----------------+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -318,7 +318,20 @@ select re.rev_name, m.mov_title from rating r join movie m on r.mov_id=m.mov_id 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------                                         
 
-9.Fnd the names of all reviewers who rated the movie ‘Yugam’.
+9.Fnd the names of all reviewers who rated the movie ‘Mugam’.
+                                         
+select re.rev_name 
+from rating r  
+join reviewer re on re.rev_id=r.rev_id 
+join movie m on r.mov_id=m.mov_id 
+where m.mov_title="Mugam";
++----------+
+| rev_name |
++----------+
+| Karthika |
+| Shasniya |
++----------+
+----------------------------------------------------------------------------------------------------------------------------------------------                                         
                                          
 
 10.Display the reviewer name, movie title, and number of stars for those movies for which rating is the lowest one.
