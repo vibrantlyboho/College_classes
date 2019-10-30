@@ -267,32 +267,90 @@ where mov_id in (select mov_id from movie_direction natural join director where 
 | Lagaan    |
 +-----------+
 ----------------------------------------------------------------------------------------------------------------------------------------------
-5.Find all the years in which at least 1 movies were released and that received a rating of morethan 3 stars. Show the results in chronological order.  
+5.Find all the years in which at least 2 movies were released and that received a rating of morethan 3 stars. Show the results in chronological order.  
 
- select mov_year from movie group by(mov_year) having count(mov_id)>1;
+ select mov_year from movie group by(mov_year) having count(mov_id)>=2;
 +----------+
 | mov_year |
 +----------+
 |     2016 |
 +----------+
+                                         
+select m.mov_year from movie m join rating r on r.mov_id=m.mov_id where howmanystars>3 group by(m.mov_year) having count(m.mov_id)>1;
+Empty set (0.03 sec)
 ----------------------------------------------------------------------------------------------------------------------------------------------
 6.Display the names of all reviewers (and ratings given by them) who gave at least 4 star ratings.
                                          
+ select * from reviewer natural join rating where howmanystars>=4;
++--------+----------+--------+--------------+---------------+
+| rev_id | rev_name | mov_id | howmanystars | total_ratings |
++--------+----------+--------+--------------+---------------+
+|   1000 | Joann    |      1 |            5 |            98 |
+|   1003 | Karthika |      2 |            4 |            94 |
+|   1002 | Greeshma |      3 |            4 |            92 |
+|   1006 | Shasniya |      4 |            5 |            85 |
+|   1004 | Fasla    |      7 |            4 |            95 |
++--------+----------+--------+--------------+---------------+
 ----------------------------------------------------------------------------------------------------------------------------------------------
+7.Find the reviewer's name and the title of the movie for those reviewers who rated more than two movies.
+                                         
+select re.rev_name, m.mov_title from rating r join movie m on r.mov_id=m.mov_id join reviewer re on r.rev_id=re.rev_id where re.rev_name in (select rev_name from reviewer natural join rating group by(rev_id) having count(rev_id)>=2);
++----------+----------------+
+| rev_name | mov_title      |
++----------+----------------+
+| Joann    | Bangalore Days |
+| Karthika | Ambili         |
+| Shasniya | It             |
+| Joann    | It             |
+| Karthika | Yugam          |
+| Shasniya | Yugam          |
++----------+----------------+
 
-7.Find the reviewer's name and the title of the movie for those reviewers who rated more than one movie.
-8.List the titles of all the movies released in 2018 and the number of stars receivedby it. Sort the results in decreasing order of star ratings.
-9.Fnd the names of all reviewers who rated the movie ‘Action Hero Biju’.
+----------------------------------------------------------------------------------------------------------------------------------------------
+8.List the titles of all the movies released in 2018 and the number of stars received by it. Sort the results in decreasing order of star ratings.
+
+ select mov_title, howmanystars from movie natural join rating where mov_year=2018 order by howmanystars desc;
++-----------+--------------+
+| mov_title | howmanystars |
++-----------+--------------+
+| Lagaan    |            4 |
++-----------+--------------+
+
+----------------------------------------------------------------------------------------------------------------------------------------------                                         
+
+9.Fnd the names of all reviewers who rated the movie ‘Yugam’.
+                                         
+
 10.Display the reviewer name, movie title, and number of stars for those movies for which rating is the lowest one.
+                                         
+                                         
 11.Fnd the details of all movies directed by ‘Rosshan Andrrews’.
+                                         
+                                         
 12.Find the list of all those movies along with release date, which includes the words ‘The’ or ‘Hero’ in their title.
+                                         
+                                         
 13.List the first and last names of all actors who were cast in the movie 'CID Moosa', and the roles they played in that production.
+
+                                         
 14.List all the actors who have not acted in any movie between 2010 and 2015.
+                                         
+                                         
 15.List all the movies with title, year, date of release, movie duration, and first and last name ofthe director which released before 1st January 2018, and sort the results according to release date from latest to old.
+                                         
+                                         
 16.Find the director's first and last name together with the title of the movie(s) they directed and have received at least one star rating.
+                                         
+                                         
 17.Find the movie title, actor first and last name, and their role in that movie, for those movies where one or more actors acted in two or more movies.
+                                         
+                                         
 18.Find the first and last name of all actors with their role in the movie, and which was also directed by themselves.
+                                         
+                                         
 19.Display the year-wise list of highest-rated movie in that year, its title, rating, and releasing country. 
+                                         
+                                         
 20.Display he following details: movie title, name of the actor, year of the movie, role of actor, director, date of release, release country and total rating of that movie. Sort the results in chronological order.
 
 
