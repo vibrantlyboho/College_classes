@@ -228,7 +228,7 @@ where act_id in (select act_id from movie_cast natural join movie where mov_titl
 +-----------+-----------+
 | Soubin    | Shah      |
 +-----------+-----------+
-
+----------------------------------------------------------------------------------------------------------------------------------------------
 2.List all the movies which were also released outside India.
 
  select mov_title from movie where release_country not in ("India");
@@ -240,10 +240,22 @@ where act_id in (select act_id from movie_cast natural join movie where mov_titl
 | Yugam     |
 | Lagaan    |
 +-----------+
-
+----------------------------------------------------------------------------------------------------------------------------------------------
 3.Find the movie title, year, date of release, director and actor for those movies which have no reviews yet.
+select m.mov_title, m.mov_year, m.mov_reldate, d.d_fname, a.act_fname 
+from movie m 
+     join movie_direction md on md.mov_id=m.mov_id 
+     join movie_cast ac on m.mov_id=ac.mov_id 
+     join director d on d.d_id=md.d_id 
+     join actor a on a.act_id=ac.act_id 
+where m.mov_id not in (select mov_id from rating);
++------------+----------+-------------+---------+-----------+
+| mov_title  | mov_year | mov_reldate | d_fname | act_fname |
++------------+----------+-------------+---------+-----------+
+| Ek Villain |     2016 | 2016-12-01  | Karan   | Shraddha  |
++------------+----------+-------------+---------+-----------+
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------
 4.Find the titles of all movies directed by the director whose first name is ‘Yash’.
 
 select mov_title 
@@ -254,7 +266,7 @@ where mov_id in (select mov_id from movie_direction natural join director where 
 +-----------+
 | Lagaan    |
 +-----------+
-
+----------------------------------------------------------------------------------------------------------------------------------------------
 5.Find all the years in which at least 1 movies were released and that received a rating of morethan 3 stars. Show the results in chronological order.  
 
  select mov_year from movie group by(mov_year) having count(mov_id)>1;
@@ -263,9 +275,10 @@ where mov_id in (select mov_id from movie_direction natural join director where 
 +----------+
 |     2016 |
 +----------+
-
-
+----------------------------------------------------------------------------------------------------------------------------------------------
 6.Display the names of all reviewers (and ratings given by them) who gave at least 4 star ratings.
+                                         
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 7.Find the reviewer's name and the title of the movie for those reviewers who rated more than one movie.
 8.List the titles of all the movies released in 2018 and the number of stars receivedby it. Sort the results in decreasing order of star ratings.
