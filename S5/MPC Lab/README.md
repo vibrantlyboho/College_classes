@@ -1,1 +1,1 @@
-## Screenshots of Microcontroller Lab
+## Screenshots of output in Microcontroller Lab
