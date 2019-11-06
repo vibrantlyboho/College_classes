@@ -5,7 +5,7 @@ create table department
  deptname varchar(20)
  );
  
- desc department;
+ /*desc department;
 +----------+-------------+------+-----+---------+-------+
 | Field    | Type        | Null | Key | Default | Extra |
 +----------+-------------+------+-----+---------+-------+
@@ -19,7 +19,7 @@ select * from department;
 +--------+----------+
 |    101 | IT       |
 |    102 | EC       |
-+--------+----------+
++--------+----------+*/
 
 
 /*employee(eid, ename, dob, joindate, salary, deptid)*/
@@ -33,7 +33,7 @@ create table employeetable
  deptid integer, 
  foreign key(deptid) references department(deptid));
 
- desc employeetable;
+/* desc employeetable;
 +----------+-------------+------+-----+---------+-------+
 | Field    | Type        | Null | Key | Default | Extra |
 +----------+-------------+------+-----+---------+-------+
@@ -43,7 +43,7 @@ create table employeetable
 | joindate | date        | YES  |     | NULL    |       |
 | salary   | int(11)     | YES  |     | NULL    |       |
 | deptid   | int(11)     | YES  | MUL | NULL    |       |
-+----------+-------------+------+-----+---------+-------+
++----------+-------------+------+-----+---------+-------+*/
 
 
 /*empbackup(eid, ename, dob, joindate, salary, deptid, dateofoperation, typeofoperation)*/
@@ -59,7 +59,7 @@ create table employeetablebackup
  typeofoperation varchar(20),
  foreign key(deptid) references department(deptid));
 
-desc employeetablebackup;
+/*desc employeetablebackup;
 +-----------------+-------------+------+-----+---------+-------+
 | Field           | Type        | Null | Key | Default | Extra |
 +-----------------+-------------+------+-----+---------+-------+
@@ -71,7 +71,7 @@ desc employeetablebackup;
 | deptid          | int(11)     | YES  | MUL | NULL    |       |
 | dateofoperation | date        | YES  |     | NULL    |       |
 | typeofoperation | varchar(20) | YES  |     | NULL    |       |
-+-----------------+-------------+------+-----+---------+-------+
++-----------------+-------------+------+-----+---------+-------+*/
 
 
 /*Write a trigger which converts employee name into uppercase if it is entered in lowercase*/
