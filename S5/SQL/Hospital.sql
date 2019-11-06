@@ -172,7 +172,7 @@ select * from Patient;
 ------------------------------------------------------------------------------------------------------------------------------
 
 
-1.Display the patient number and ward number of all patients.
+/*1.Display the patient number and ward number of all patients.*/
 
 select Pat_ID, Ward_Num from Patient;
 +--------+----------+
@@ -186,7 +186,7 @@ select Pat_ID, Ward_Num from Patient;
 +--------+----------+
 
 
-2.Display the names of all nurses in the hospital along with their shift of working
+/*2.Display the names of all nurses in the hospital along with their shift of working*/
 
 select Nurse_fName, Shift from Nurse;
 +-------------+-------+
@@ -205,7 +205,7 @@ select Nurse_fName, Shift from Nurse;
 | Robert      | Day   |
 +-------------+-------+
 
-3.Display the names of patients and their physicians only for patients admitted in any ward. 
+/*3.Display the names of patients and their physicians only for patients admitted in any ward.*/
 
 select Pat_fName, Phy_fname from Patient natural join physician;
 +-----------+-----------+
@@ -220,7 +220,7 @@ select Pat_fName, Phy_fname from Patient natural join physician;
 | Christoph | Aaren     |
 +-----------+-----------+
 
-4.Display the details of physicians who earn more than Rs. 50,000.
+/*4.Display the details of physicians who earn more than Rs. 50,000.*/
 
 select * from physician where Salary>50000;
 +--------+-----------+-----------+-------------+--------+--------+
@@ -237,7 +237,7 @@ select * from physician where Salary>50000;
 |   1056 | Mayuri    | Anurag    | Dehradun    |  75000 | MD     |
 +--------+-----------+-----------+-------------+--------+--------+
 
-5.Display the unique listing of the fields of specialization of the physicians.
+/*5.Display the unique listing of the fields of specialization of the physicians.*/
 
  select distinct FIeld_of_Specialization from  physician_speciality;
 +-------------------------+
@@ -251,7 +251,7 @@ select * from physician where Salary>50000;
 | Neurology               |
 +-------------------------+
 
-6.Find the details of all patients whose first name starts with ‘L’ and are treated by the physician named ‘Arul’.
+/*6.Find the details of all patients whose first name starts with ‘L’ and are treated by the physician named ‘Arul’.*/
 
 select * from Patient natural join physician where Pat_fname like 'L%' and Phy_fname='Arul';
 +--------+--------+-----------+-----------+------+----------+------------+-----------+-----------+---------+--------+--------+
@@ -260,7 +260,7 @@ select * from Patient natural join physician where Pat_fname like 'L%' and Phy_f
 |   1010 |     32 | Lindsey   | Stan      |   35 |     5002 | 2010-05-17 | Arul      | S         | Ludiana |  65000 | BDS    |
 +--------+--------+-----------+-----------+------+----------+------------+-----------+-----------+---------+--------+--------+
 
-7.Display the details of wards having more than 30 beds.
+/*7.Display the details of wards having more than 30 beds.*/
 
  select * from Ward where Num_of_Beds>30;
 +----------+-----------+-------------+----------+------------+
@@ -270,7 +270,7 @@ select * from Patient natural join physician where Pat_fname like 'L%' and Phy_f
 |     5010 | G2        |          50 |     2079 | 9237294051 |
 +----------+-----------+-------------+----------+------------+
 
-8.Display the details of all patients who are more than 45 years of age and are treated by physicians specialized in ‘Cardiology’.
+/*8.Display the details of all patients who are more than 45 years of age and are treated by physicians specialized in ‘Cardiology’.*/
 
  select * from Patient natural join physician_speciality where age>45 and Field_of_Specialization='Cardiology';
 +--------+--------+-----------+-----------+------+----------+------------+-------------------------+------------------------+
@@ -279,7 +279,7 @@ select * from Patient natural join physician where Pat_fname like 'L%' and Phy_f
 |   1025 |     13 | Yani      | L         |   50 |     5005 | 2005-05-01 | Cardiology              | 1999-10-22             |
 +--------+--------+-----------+-----------+------+----------+------------+-------------------------+------------------------+
 
-9.Display the Ward Number and Ward Name of all wards in the hospital along with the ID andnames of nurses assigned to that ward.
+/*9.Display the Ward Number and Ward Name of all wards in the hospital along with the ID andnames of nurses assigned to that ward.*/
 
 select Ward_Num, Ward_Name, Nurse_ID, Nurse_fname from Ward natural join Nurse ;
 +----------+-----------+----------+-------------+
@@ -297,7 +297,7 @@ select Ward_Num, Ward_Name, Nurse_ID, Nurse_fname from Ward natural join Nurse ;
 |     5010 | G2        |     2079 | Robert      |
 +----------+-----------+----------+-------------+
 
-10.Display the details of all physicians whose ‘Field_of Specialization’ string length is less than7. 
+/*10.Display the details of all physicians whose ‘Field_of Specialization’ string length is less than 7. */
 
  select * from physician natural join physician_speciality where length(Field_of_Specialization)<8;
 +--------+-----------+-----------+-----------+--------+--------+-------------------------+------------------------+
@@ -307,9 +307,9 @@ select Ward_Num, Ward_Name, Nurse_ID, Nurse_fname from Ward natural join Nurse ;
 |   1027 | Catherine | P         | Hyderabad |  65000 | MBBS   | Surgery                 | 1998-11-02             |
 +--------+-----------+-----------+-----------+--------+--------+-------------------------+------------------------+
 
-11.Add a new patient to the ‘Patient’ table. Assign a ward number to this new patient. Display the details of the nurse in charge of this patient.
+/*11.Add a new patient to the ‘Patient’ table. Assign a ward number to this new patient. Display the details of the nurse in charge of this patient.
 12.Display the details of nurses in all wards. Ignore wards which have no patients admitted.
-13.List all the nurses working in ‘Night’ shift.
+13.List all the nurses working in ‘Night’ shift.*/
 
 
 
