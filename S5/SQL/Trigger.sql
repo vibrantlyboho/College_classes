@@ -11,7 +11,7 @@ create table department
 +----------+-------------+------+-----+---------+-------+
 | deptid   | int(11)     | NO   | PRI | NULL    |       |
 | deptname | varchar(20) | YES  |     | NULL    |       |
-+----------+-------------+------+-----+---------+-------+
++----------+-------------+------+-----+---------+-------+*/
 
 select * from department;
 +--------+----------+
@@ -19,7 +19,7 @@ select * from department;
 +--------+----------+
 |    101 | IT       |
 |    102 | EC       |
-+--------+----------+*/
++--------+----------+
 
 
 /*employee(eid, ename, dob, joindate, salary, deptid)*/
@@ -81,7 +81,7 @@ on employeetable
 for each row
 set new.ename=upper(new.ename);
 
-/*insert into employeetable values(1, "joann", '1999-10-25', '2017-12-03', 10000, 101);
+insert into employeetable values(1, "joann", '1999-10-25', '2017-12-03', 10000, 101);
 Query OK, 1 row affected (0.13 sec)
 
 mysql> select * from employeetable;
@@ -92,7 +92,6 @@ mysql> select * from employeetable;
 +-----+-------+------------+------------+--------+--------+
 1 row in set (0.02 sec)
 
-
 insert into employeetable values(2, "Karthika", '1999-03-04', '2018-10-11', 10000, 101);
 Query OK, 1 row affected (0.06 sec)
 
@@ -102,7 +101,13 @@ mysql> select * from employeetable;
 +-----+----------+------------+------------+--------+--------+
 |   1 | JOANN    | 1999-10-25 | 2017-12-03 |  10000 |    101 |
 |   2 | KARTHIKA | 1999-03-04 | 2018-10-11 |  10000 |    101 |
-+-----+----------+------------+------------+--------+--------+*/
++-----+----------+------------+------------+--------+--------+
+
 
 /*Write a trigger that stores the data of employee in employeebackup for every delete operation and 
 stores the old data for every update operation*/
+
+create trigger backup
+before delete 
+on employeetablebackup
+referencing old as employeetable
