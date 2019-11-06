@@ -1,12 +1,38 @@
-employee(id, name, dob, joindate, salary, deptid)
+/*department(deptid, deptname)*/
 
-department(deptid, deptname)
+create table department
+(deptid integer PRIMARY KEY,
+ deptname varchar(20),
+ );
 
-empbackup(empid, name, dob, joindate, salary, deptid, dateofoperation, typeofoperation)
+/*employee(eid, ename, dob, joindate, salary, deptid)*/
 
-incometax(empid, name, dob, joindate, salary, deptid, taxamount)
+create table employee
+(eid integer PRIMARY KEY,
+ ename varchar(20),
+ dob date,
+ joindate date,
+ salary integer,
+ deptid integer
+ 
+ FOREIGN KEY(deptid) references department(deptid));
 
 
-Write a trigger which converts employee name into uppercase if it is entered in lowercase
+/*empbackup(eid, ename, dob, joindate, salary, deptid, dateofoperation, typeofoperation)*/
+
+create table employee
+(eid integer PRIMARY KEY,
+ ename varchar(20),
+ dob date,
+ joindate date,
+ salary integer,
+ deptid integer,
+ dateofoperation date,
+ typeofoperation varchar(20)
+ 
+ FOREIGN KEY(deptid) references department(deptid));
+
+
+/*Write a trigger which converts employee name into uppercase if it is entered in lowercase
 Write a trigger that stores the data of employee in employeebackup for every delete operation and 
-stores the old data for every update operation
+stores the old data for every update operation*/
