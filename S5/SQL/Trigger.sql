@@ -103,15 +103,47 @@ mysql> select * from employeetable;
 |   2 | KARTHIKA | 1999-03-04 | 2018-10-11 |  10000 |    101 |
 +-----+----------+------------+------------+--------+--------+
 
+ insert into employeetable values(3, "Fasla", '1999-03-11', '2016-11-01', 10000, 101);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into employeetable values(4, "Shasni", '1999-04-18', '2017-11-01', 10000, 101);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from employeetable;
++-----+----------+------------+------------+--------+--------+
+| eid | ename    | dob        | joindate   | salary | deptid |
++-----+----------+------------+------------+--------+--------+
+|   1 | JOANN    | 1999-10-25 | 2017-12-03 |  10000 |    101 |
+|   2 | KARTHIKA | 1999-03-04 | 2018-10-11 |  10000 |    101 |
+|   3 | FASLA    | 1999-03-11 | 2016-11-01 |  10000 |    101 |
+|   4 | SHASNI   | 1999-04-18 | 2017-11-01 |  10000 |    101 |
++-----+----------+------------+------------+--------+--------+
+4 rows in set (0.02 sec)
+
+
 
 /*Write a trigger that stores the data of employee in employeebackup for every delete operation and 
 stores the old data for every update operation*/
 
-create trigger backup
-before delete 
-on employeetable
-referencing old as d
-for each row
-begin
-insert into employeetablebackup(:d.eid, :d.ename, :d.dob, :d.joindate, :d.salary, :d.deptid)  
-end;
+ delimiter $$
+ create trigger backup
+ before delete 
+ on employeetable
+ for each row
+ begin
+ insert into employeetablebackup values(old.eid, old.ename, old.dob, old.joindate, old.salary, old.deptid, '2017-10-10', "delete"); 
+ end; $$
+ 
+ mysql> delete from employeetable where eid=1;
+Query OK, 1 row affected (0.07 sec) 
+
+mysql> select * from employeetablebackup;
++-----+-------+------------+------------+--------+--------+-----------------+-----------------+
+| eid | ename | dob        | joindate   | salary | deptid | dateofoperation | typeofoperation |
++-----+-------+------------+------------+--------+--------+-----------------+-----------------+
+|   1 | JOANN | 1999-10-25 | 2017-12-03 |  10000 |    101 | 2017-10-10      | delete          |
++-----+-------+------------+------------+--------+--------+-----------------+-----------------+
+1 row in set (0.00 sec)
+
+
+ 
