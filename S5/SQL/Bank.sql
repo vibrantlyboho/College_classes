@@ -140,7 +140,7 @@ select * from loan;
 +---------+------+------+--------+------------+
 *************************************************************************************************************************************
 *************************************************************************************************************************************
-1.Display the details of all customers having a loan amount greater than Rs. 3000
+/*1.Display the details of all customers having a loan amount greater than Rs. 3000*/
 
  select * from customer natural join loan where amount>3000;
 +------+-----------+-------------+---------+------+--------+------------+
@@ -150,7 +150,7 @@ select * from loan;
 | 2013 | Eva J     | Gandhinagar |    5007 | 1017 |   5000 | 2020-01-07 |
 +------+-----------+-------------+---------+------+--------+------------+
 
-2.For those customers who have borrowed, display their names and loan numbers.
+/*2.For those customers who have borrowed, display their names and loan numbers.*/
 
 select cname, loan_no from customer natural join loan;
 +------------+---------+
@@ -164,7 +164,7 @@ select cname, loan_no from customer natural join loan;
 | Shasniya   |    5009 |
 +------------+---------+
 
-3.Display the name, deposit amount and date of deposit of all customers who have a fixed deposit (FD).
+/*3.Display the name, deposit amount and date of deposit of all customers who have a fixed deposit (FD).*/
 
 select cname, amount, deposit_date from customer natural join deposit where type="FD";
 +-----------+--------+--------------+
@@ -174,7 +174,7 @@ select cname, amount, deposit_date from customer natural join deposit where type
 | Chantelle |  15000 | 2017-07-10   |
 +-----------+--------+--------------+
 
-4.Display the total number of customers in each city.
+/*4.Display the total number of customers in each city.*/
 
 select ccity, count(ccity) as count from customer group by ccity;
 +-------------+-------+
@@ -188,7 +188,7 @@ select ccity, count(ccity) as count from customer group by ccity;
 | Trivandrum  |     2 |
 +-------------+-------+
 
-5.Display the customer name and branch name of customers who have made a Recurring Deposit (RD) on or after 8/8/2017.
+/*5.Display the customer name and branch name of customers who have made a Recurring Deposit (RD) on or after 8/8/2017.*/
 
 select cname, bname from customer natural join deposit join branch where type="RD" and deposit_date>"2017-08-08" and deposit.b_id=branch.b_id;
 +------------+-------------------+
@@ -200,7 +200,7 @@ select cname, bname from customer natural join deposit join branch where type="R
 | Greeshma R | SBI Neyyatingara  |
 +------------+-------------------+
 
-6.Display the details of all customers who have made a deposit between 08 Nov 2016 and 23rd Aug 2019.
+/*6.Display the details of all customers who have made a deposit between 08 Nov 2016 and 23rd Aug 2019.*/
 
  select c_id, cname, ccity from customer natural join deposit where deposit_date between "2017-1-1" and "2017-12-31";
 +------+------------+-------------+
@@ -211,7 +211,7 @@ select cname, bname from customer natural join deposit join branch where type="R
 | 2001 | Greeshma R | Trivandrum  |
 +------+------------+-------------+
 
-7.Display the count of customers who have taken a loan and belonging to the city ‘Trivandrum’.
+/*7.Display the count of customers who have taken a loan and belonging to the city ‘Trivandrum’.*/
 
 select count(c_id) from customer natural join loan where ccity="Trivandrum";
 +-------------+
@@ -220,7 +220,7 @@ select count(c_id) from customer natural join loan where ccity="Trivandrum";
 |           1 |
 +-------------+
 
-8.Display the total and average loan amount disbursed from each branch. Round off the result to two decimal places.
+/*8.Display the total and average loan amount disbursed from each branch. Round off the result to two decimal places.*/
 
  select bname, sum(amount) as total, round(avg(amount), 2) as average  from branch natural join loan group by bname;
 +------------------+-------+---------+
@@ -233,7 +233,7 @@ select count(c_id) from customer natural join loan where ccity="Trivandrum";
 | SBI TVMC Lane    |  1000 | 1000.00 |
 +------------------+-------+---------+
 
-9.List the branch-wise total fixed deposit and recurring deposit amount.
+/*9.List the branch-wise total fixed deposit and recurring deposit amount.*/
 
  select bname, type, sum(amount) as totalamt from branch natural join deposit group by bname, type;
 +-------------------+------+----------+
@@ -246,7 +246,7 @@ select count(c_id) from customer natural join loan where ccity="Trivandrum";
 | SBI TVMC Lane     | RD   |    99000 |
 +-------------------+------+----------+
 
-10.Delete the deposit details of all customers whose deposit account have matured.
+/*10.Delete the deposit details of all customers whose deposit account have matured.*/
 
  
 update deposit set mature_date="2017-1-1" where acc_no=3000;
@@ -277,7 +277,7 @@ mysql> select * from deposit;
 |   3010 | 2001 | 1007 |   9500 | RD   |  3.0 | 2017-08-15   | 2021-08-10  |
 +--------+------+------+--------+------+------+--------------+-------------+
 
-11.List the total deposit amount of customers living in Tirunelveli.
+/*11.List the total deposit amount of customers living in Tirunelveli.*/
 
 select sum(amount) from deposit natural join customer where ccity="Tirunelveli";
 +-------------+
@@ -286,7 +286,7 @@ select sum(amount) from deposit natural join customer where ccity="Tirunelveli";
 |       99000 |
 +-------------+
 
-12.Give a hike of 0.5% to the rate of interest of the customer who holds the largest deposit amount of the customers living in ‘Kochi’.
+/*12.Give a hike of 0.5% to the rate of interest of the customer who holds the largest deposit amount of the customers living in ‘Kochi’.
 
 
 13.Display the name and deposit amount of all depositors and order them by the alphabetical ofbranch city.
@@ -298,7 +298,7 @@ select sum(amount) from deposit natural join customer where ccity="Tirunelveli";
 19.Find all customers who have both an account and a loan at the ‘PMG’  branch.
 20.Find all customers whose loans made at the ‘Trivandrum Main’ branch with loan amounts greater han Rs. 1,50,000.
 21.Delete the records of all accounts with balances below the average balance at each branch.
-22.Increase all accounts with balances over Rs. 10,00,000 by 6%, all other accounts receive 5%.
+22.Increase all accounts with balances over Rs. 10,00,000 by 6%, all other accounts receive 5%.*/
 
 
 
