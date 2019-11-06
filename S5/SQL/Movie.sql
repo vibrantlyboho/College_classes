@@ -218,7 +218,7 @@ select * from rating;
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-1.Display the list of all actors who played a role in the movie 'Ambili'.
+/*1.Display the list of all actors who played a role in the movie 'Ambili'.*/
 
 select act_fname, act_lname 
 from actor natural join movie_cast 
@@ -229,7 +229,7 @@ where act_id in (select act_id from movie_cast natural join movie where mov_titl
 | Soubin    | Shah      |
 +-----------+-----------+
 ----------------------------------------------------------------------------------------------------------------------------------------------
-2.List all the movies which were also released outside India.
+/*2.List all the movies which were also released outside India.*/
 
  select mov_title from movie where release_country not in ("India");
 +-----------+
@@ -241,7 +241,8 @@ where act_id in (select act_id from movie_cast natural join movie where mov_titl
 | Lagaan    |
 +-----------+
 ----------------------------------------------------------------------------------------------------------------------------------------------
-3.Find the movie title, year, date of release, director and actor for those movies which have no reviews yet.
+/*3.Find the movie title, year, date of release, director and actor for those movies which have no reviews yet.*/
+                                         
 select m.mov_title, m.mov_year, m.mov_reldate, d.d_fname, a.act_fname 
 from movie m 
      join movie_direction md on md.mov_id=m.mov_id 
@@ -256,7 +257,7 @@ where m.mov_id not in (select mov_id from rating);
 +------------+----------+-------------+---------+-----------+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-4.Find the titles of all movies directed by the director whose first name is ‘Yash’.
+/*4.Find the titles of all movies directed by the director whose first name is ‘Yash’.*/
 
 select mov_title 
 from movie natural join movie_direction 
@@ -267,7 +268,7 @@ where mov_id in (select mov_id from movie_direction natural join director where 
 | Lagaan    |
 +-----------+
 ----------------------------------------------------------------------------------------------------------------------------------------------
-5.Find all the years in which at least 2 movies were released and that received a rating of morethan 3 stars. Show the results in chronological order.  
+/*5.Find all the years in which at least 2 movies were released and that received a rating of morethan 3 stars. Show the results in chronological order.*/  
 
  select mov_year from movie group by(mov_year) having count(mov_id)>=2;
 +----------+
@@ -279,7 +280,7 @@ where mov_id in (select mov_id from movie_direction natural join director where 
 select m.mov_year from movie m join rating r on r.mov_id=m.mov_id where howmanystars>3 group by(m.mov_year) having count(m.mov_id)>1;
 Empty set (0.03 sec)
 ----------------------------------------------------------------------------------------------------------------------------------------------
-6.Display the names of all reviewers (and ratings given by them) who gave at least 4 star ratings.
+/*6.Display the names of all reviewers (and ratings given by them) who gave at least 4 star ratings.*/
                                          
  select * from reviewer natural join rating where howmanystars>=4;
 +--------+----------+--------+--------------+---------------+
@@ -292,7 +293,7 @@ Empty set (0.03 sec)
 |   1004 | Fasla    |      7 |            4 |            95 |
 +--------+----------+--------+--------------+---------------+
 ----------------------------------------------------------------------------------------------------------------------------------------------
-7.Find the reviewer's name and the title of the movie for those reviewers who rated more than two movies.
+/*7.Find the reviewer's name and the title of the movie for those reviewers who rated more than two movies.*/
                                          
 select re.rev_name, m.mov_title from rating r join movie m on r.mov_id=m.mov_id join reviewer re on r.rev_id=re.rev_id where re.rev_name in (select rev_name from reviewer natural join rating group by(rev_id) having count(rev_id)>=2);
 +----------+----------------+
@@ -307,7 +308,7 @@ select re.rev_name, m.mov_title from rating r join movie m on r.mov_id=m.mov_id 
 +----------+----------------+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-8.List the titles of all the movies released in 2018 and the number of stars received by it. Sort the results in decreasing order of star ratings.
+/*8.List the titles of all the movies released in 2018 and the number of stars received by it. Sort the results in decreasing order of star ratings.*/
 
  select mov_title, howmanystars from movie natural join rating where mov_year=2018 order by howmanystars desc;
 +-----------+--------------+
@@ -318,7 +319,7 @@ select re.rev_name, m.mov_title from rating r join movie m on r.mov_id=m.mov_id 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------                                         
 
-9.Fnd the names of all reviewers who rated the movie ‘Mugam’.
+/*9.Find the names of all reviewers who rated the movie ‘Mugam’.*/
                                          
 select re.rev_name 
 from rating r  
@@ -334,7 +335,7 @@ where m.mov_title="Mugam";
 ----------------------------------------------------------------------------------------------------------------------------------------------                                         
                                          
 
-10.Display the reviewer name, movie title, and number of stars for those movies for which rating is the lowest one.
+/*10.Display the reviewer name, movie title, and number of stars for those movies for which rating is the lowest one.
                                          
                                          
 11.Fnd the details of all movies directed by ‘Rosshan Andrrews’.
@@ -364,6 +365,6 @@ where m.mov_title="Mugam";
 19.Display the year-wise list of highest-rated movie in that year, its title, rating, and releasing country. 
                                          
                                          
-20.Display he following details: movie title, name of the actor, year of the movie, role of actor, director, date of release, release country and total rating of that movie. Sort the results in chronological order.
+20.Display he following details: movie title, name of the actor, year of the movie, role of actor, director, date of release, release country and total rating of that movie. Sort the results in chronological order.*/
 
 
