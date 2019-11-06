@@ -109,5 +109,9 @@ stores the old data for every update operation*/
 
 create trigger backup
 before delete 
-on employeetablebackup
-referencing old as employeetable
+on employeetable
+referencing old as d
+for each row
+begin
+insert into employeetablebackup(:d.eid, :d.ename, :d.dob, :d.joindate, :d.salary, :d.deptid)  
+end;
