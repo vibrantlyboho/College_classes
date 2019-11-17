@@ -22,6 +22,8 @@
 - https://www.thomasalspaugh.org/pub/fnd/architecture.html
 - https://www.student.cs.uwaterloo.ca/~cs446/1171/Arch_Design_Activity/Interpreter.pdf
 - http://dossier-andreas.net/software_architecture/vm.html
+- https://www.coursera.org/lecture/software-architecture/3-2-6-interpreters-IxpQc
 
 ### Event
+- https://www.coursera.org/lecture/software-architecture/3-2-8-event-based-BCG96
 - https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch02.html
