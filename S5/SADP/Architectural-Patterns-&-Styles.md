@@ -18,5 +18,9 @@
   #### Repository
     - http://dossier-andreas.net/software_architecture/repository.html
 
+### Interpreter
+- https://www.thomasalspaugh.org/pub/fnd/architecture.html
+- https://www.student.cs.uwaterloo.ca/~cs446/1171/Arch_Design_Activity/Interpreter.pdf
+
 ### Event
 - https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch02.html
