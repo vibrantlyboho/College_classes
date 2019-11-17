@@ -27,3 +27,4 @@
 ### Event
 - https://www.coursera.org/lecture/software-architecture/3-2-8-event-based-BCG96
 - https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch02.html
+- https://www.drdobbs.com/architecture-and-design/event-based-architectures/208801141
