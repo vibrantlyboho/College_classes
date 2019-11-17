@@ -28,3 +28,8 @@
 - https://www.coursera.org/lecture/software-architecture/3-2-8-event-based-BCG96
 - https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch02.html
 - https://www.drdobbs.com/architecture-and-design/event-based-architectures/208801141
+
+### Model View Controller
+- http://dossier-andreas.net/software_architecture/mvc.html
+- https://www.tutorialsteacher.com/mvc/mvc-architecture
+- https://www.tutorialride.com/software-architecture-and-design/mvc-architecture.htm
