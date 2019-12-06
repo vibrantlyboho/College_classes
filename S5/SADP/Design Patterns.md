@@ -10,3 +10,4 @@ that the programmer can use to solve common problems when designing an applicati
 - https://en.wikipedia.org/wiki/Software_design_pattern
 - https://sourcemaking.com/design_patterns
 - https://www.tutorialspoint.com/design_pattern/design_pattern_overview.htm
+- https://refactoring.guru/
