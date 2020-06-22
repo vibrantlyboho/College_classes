@@ -16,4 +16,5 @@ database to help top level managers in decision making.
 - other applications
 
 ## OTHER RESOURCES
-https://drive.google.com/file/d/1qcG2P4tucmAghEcooRYXV4i6atXBGZVy/view
+- https://drive.google.com/file/d/1qcG2P4tucmAghEcooRYXV4i6atXBGZVy/view
+- http://myweb.sabanciuniv.edu/rdehkharghani/files/2016/02/The-Morgan-Kaufmann-Series-in-Data-Management-Systems-Jiawei-Han-Micheline-Kamber-Jian-Pei-Data-Mining.-Concepts-and-Techniques-3rd-Edition-Morgan-Kaufmann-2011.pdf
