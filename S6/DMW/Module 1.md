@@ -15,4 +15,5 @@ database to help top level managers in decision making.
 - clustering
 - other applications
 
+## OTHER RESOURCES
 https://drive.google.com/file/d/1qcG2P4tucmAghEcooRYXV4i6atXBGZVy/view
